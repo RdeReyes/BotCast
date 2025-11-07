@@ -3,10 +3,10 @@ import feedparser
 import telebot
 
 # Leer las variables secretas desde GitHub Actions
-BOT_TOKEN = os.getenv("BOT_TOKEN")
+BOT_TOKEN = os.getenv(8330905677:AAGGalSe0QnKfe0qsr5mxYbLIn20DmSULf8)
 CHANNEL_RSS = "https://www.youtube.com/feeds/videos.xml?channel_id=UCBYyJBCtCvgqA4NwtoPMwpQ"
 
-bot = telebot.TeleBot(BOT_TOKEN)
+bot = telebot.TeleBot(8330905677:AAGGalSe0QnKfe0qsr5mxYbLIn20DmSULf8)
 
 # Variable global para recordar el último vídeo procesado
 last_video = None
