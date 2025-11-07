@@ -28,6 +28,6 @@ def check_new_video():
 # Prueba básica
 @bot.message_handler(commands=['start'])
 def start(message):
-    bot.reply_to(message, "Hola 👋, estaré pendiente del canal de Jordi Wild.")
+    bot.reply_to(message, "Hola Ikerxo 👋, estaré pendiente del canal de Jordi Wild.")
 
 bot.polling()
