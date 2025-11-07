@@ -6,7 +6,7 @@ import telebot
 BOT_TOKEN = os.getenv(TELEGRAM_BOT_TOKEN)
 CHANNEL_RSS = "https://www.youtube.com/feeds/videos.xml?channel_id=UCBYyJBCtCvgqA4NwtoPMwpQ"
 
-bot = telebot.TeleBot(8330905677:AAGGalSe0QnKfe0qsr5mxYbLIn20DmSULf8)
+bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
 
 # Variable global para recordar el último vídeo procesado
 last_video = None
