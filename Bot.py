@@ -3,7 +3,7 @@ import feedparser
 import telebot
 
 # Leer las variables secretas desde GitHub Actions
-BOT_TOKEN = os.getenv(8330905677:AAGGalSe0QnKfe0qsr5mxYbLIn20DmSULf8)
+BOT_TOKEN = os.getenv(TELEGRAM_BOT_TOKEN)
 CHANNEL_RSS = "https://www.youtube.com/feeds/videos.xml?channel_id=UCBYyJBCtCvgqA4NwtoPMwpQ"
 
 bot = telebot.TeleBot(8330905677:AAGGalSe0QnKfe0qsr5mxYbLIn20DmSULf8)
