@@ -21,6 +21,9 @@ jobs:
 
       - name: Instalar dependencias
         run: pip install -r requirements.txt
-
+        
+      - name: Listar archivos
+        run: ls -R
+        
       - name: Ejecutar el bot
         run: python Bot.py
