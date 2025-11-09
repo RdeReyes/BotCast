@@ -53,6 +53,9 @@ def send_mp3(bot, chat_id, mp3_path, title):
     with open(mp3_path, "rb") as f:
         bot.send_audio(chat_id=chat_id, audio=f, title=title)
 
+def send_message(bot, chat_id, text):
+    bot.send_message(chat_id=chat_id, text=text)
+
 def main():
     bot = Bot(token=TELEGRAM_TOKEN)
     channels = load_json(CHANNELS_FILE)
@@ -63,10 +66,13 @@ def main():
             result = get_latest_video(url)
             if not result:
                 print(f"No se pudo obtener vídeos de {name}")
+                send_message(bot, CHAT_ID, f"No se pudo obtener vídeos de {name}")
                 continue
+
             vid, title, video_url = result
             if last_videos.get(name) == vid:
                 print(f"Sin nuevos vídeos en {name}")
+                send_message(bot, CHAT_ID, f"No hay ningún vídeo nuevo en {name}.")
                 continue
 
             print(f"Nuevo vídeo detectado en {name}: {title}")
@@ -76,8 +82,11 @@ def main():
                 mp3.unlink(missing_ok=True)
                 last_videos[name] = vid
                 save_json(last_videos, LAST_FILE)
+            else:
+                send_message(bot, CHAT_ID, f"Se detectó un nuevo vídeo en {name}, pero no se pudo descargar el audio.")
         except Exception as e:
             print(f"Error con {name}: {e}")
+            send_message(bot, CHAT_ID, f"Ocurrió un error con {name}: {e}")
 
 if __name__ == "__main__":
     main()
