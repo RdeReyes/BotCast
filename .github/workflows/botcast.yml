@@ -27,5 +27,5 @@ jobs:
         
       - name: Ejecutar el bot
         env:
-    TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-  run: python Bot.py
+        TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+        run: python Bot.py
